@@ -41,7 +41,7 @@ public class MedicoController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<DatosListadoMedico>> listadoMedicos(@PageableDefault(size = 2) Pageable paginacion) {
+    public ResponseEntity<Page<DatosListadoMedico>> listadoMedicos(@PageableDefault(size = 50) Pageable paginacion) {
         // return
         // medicoRepository.findByEstadoTrue(paginacion).map(DatosListadoMedico::new);
         return ResponseEntity.ok(medicoRepository.findByEstadoTrue(paginacion).map(DatosListadoMedico::new));
